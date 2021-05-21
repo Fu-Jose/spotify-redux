@@ -53,6 +53,7 @@ class App extends React.Component {
               exact
               render={() => <Home searchResults={this.state.searchResults} />}
             />
+            <Route path="/myLibrary" component={Album} />
             <Route path="/artist/:id" component={Artist} />
             <Route path="/album/:id" component={Album} />
           </Row>
