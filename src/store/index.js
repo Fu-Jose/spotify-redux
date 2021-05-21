@@ -1,13 +1,14 @@
 import { combineReducers, createStore, compose, applyMiddleware } from "redux";
-import likesReducer from "../reducers/likesReducer";
+import likedReducer from "../reducers/likesReducer";
 import queueReducer from "../reducers/queueReducer";
-import songReducer from "../reducers/songReducer";
+import playingSongReducer from "../reducers/songPlayingReducer";
+import songReducer from "../reducers/songsReducer";
 import thunk from "redux-thunk";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const initialState = {
-  likedSongs: {
+  library: {
     favourites: [],
   },
   songQueue: {
@@ -16,12 +17,17 @@ export const initialState = {
   playingSong: {
     song: {},
   },
+  songs: {
+    list: [],
+    error: false,
+  },
 };
 
 const bigReducer = combineReducers({
-  likedSongs: likesReducer,
+  likedSongs: likedReducer,
   songQueue: queueReducer,
-  playingSong: songReducer,
+  playingSong: playingSongReducer,
+  songs: songReducer,
 });
 
 export default function configureStore() {

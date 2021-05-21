@@ -2,6 +2,7 @@ import React from "react";
 import Song from "./Song";
 import { Row } from "react-bootstrap";
 
+
 class Album extends React.Component {
   state = {
     album: {},
@@ -76,7 +77,8 @@ class Album extends React.Component {
             <Row>
               <div className="col-md-10 mb-5" id="trackList">
                 {this.state.songs.map((song) => (
-                  <Song track={song} key={song.id} />
+                  <Song track={song} key={song.id}>
+                  </Song>
                 ))}
               </div>
             </Row>
