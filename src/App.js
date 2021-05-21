@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import { Row } from "react-bootstrap";
 import Artist from "./components/Artist";
 import Album from "./components/Album";
+import LibraryPage from "./components/YourLibrary";
 
 let headers = new Headers({
   "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
@@ -53,7 +54,7 @@ class App extends React.Component {
               exact
               render={() => <Home searchResults={this.state.searchResults} />}
             />
-            <Route path="/myLibrary" component={Album} />
+            <Route path="/myLibrary" component={LibraryPage} />
             <Route path="/artist/:id" component={Artist} />
             <Route path="/album/:id" component={Album} />
           </Row>
