@@ -24,7 +24,7 @@ export const initialState = {
 };
 
 const bigReducer = combineReducers({
-  likedSongs: likedReducer,
+  library: likedReducer,
   songQueue: queueReducer,
   playingSong: playingSongReducer,
   songs: songReducer,

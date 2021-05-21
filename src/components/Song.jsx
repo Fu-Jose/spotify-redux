@@ -1,8 +1,19 @@
 import React from "react";
 import LikeButton from "./LikeButton";
 import { AiOutlineHeart } from "react-icons/ai";
-import { addToLikedSongsActionWithThunk } from "../actions/index";
+import { addToLikedSongsAction, addToLikedSongsActionWithThunk } from "../actions/index.js";
+const mapStateToProps = (state) => state;
 
+const mapDispatchToProps = (dispatch) => ({
+  addToLibrary: (favourites) =>
+    dispatch(addToLikedSongsActionWithThunk(favourites)),
+});
+
+class Song extends React.Component {
+  state = {
+    favourites: null,
+  };
+}
 const Song = ({ track }) => (
   <div className="py-3 trackHover">
     <span className="card-title trackHover px-3" style={{ color: "white" }}>
