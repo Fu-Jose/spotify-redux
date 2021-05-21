@@ -1,4 +1,4 @@
-import { initialState } from "../store";
+import { initialState } from "../store/index.js";
 
 const playingSongReducer = (state = initialState.playingSong, action) => {
   switch (action.type) {

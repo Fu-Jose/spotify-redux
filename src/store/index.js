@@ -1,7 +1,7 @@
-import { combineReducers, createStore, applyMiddleware } from "redux";
-import likesReducer from "redux/reducers/likesReducer";
-import queueReducer from "redux/reducers/queueReducer";
-import songReducer from "redux/reducers/songReducer";
+import { combineReducers, createStore, compose, applyMiddleware } from "redux";
+import likesReducer from "../reducers/likesReducer";
+import queueReducer from "../reducers/queueReducer";
+import songReducer from "../reducers/songReducer";
 import thunk from "redux-thunk";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
