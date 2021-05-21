@@ -2,9 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 
-const mapStateToProps = (state) => ({
-  song: state.playingSong.song,
-});
+const mapStateToProps = (state) => state;
 const Player = () => (
   <div className="container-fluid fixed-bottom bg-container pt-1">
     <Row>
@@ -16,9 +14,7 @@ const Player = () => (
             style={{ height: "58px" }}
           ></img>
           <div className="d-flex flex-column">
-            <span className="text-nowrap text-white ml-4">
-              {state.playingSong.song.name}
-            </span>
+            <span className="text-nowrap text-white ml-4">SONG NAME</span>
             <span className="text-nowrap text-white ml-4">SONG ARTIST</span>
             <span className="text-nowrap text-white ml-4">SONG ALBUM</span>
           </div>
