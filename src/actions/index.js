@@ -69,3 +69,8 @@ export const getSongsAction = (value) => {
     }
   };
 };
+
+export const playSong = (track) => ({
+  type: "SONG_IS_PLAYING",
+  payload: track,
+});

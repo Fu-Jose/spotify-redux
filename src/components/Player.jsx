@@ -1,6 +1,10 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { connect } from "react-redux";
 
+const mapStateToProps = (state) => ({
+  song: state.playingSong.song,
+});
 const Player = () => (
   <div className="container-fluid fixed-bottom bg-container pt-1">
     <Row>
@@ -12,7 +16,9 @@ const Player = () => (
             style={{ height: "58px" }}
           ></img>
           <div className="d-flex flex-column">
-            <span className="text-nowrap text-white ml-4">SONG TITLE</span>
+            <span className="text-nowrap text-white ml-4">
+              {state.playingSong.song.name}
+            </span>
             <span className="text-nowrap text-white ml-4">SONG ARTIST</span>
             <span className="text-nowrap text-white ml-4">SONG ALBUM</span>
           </div>
@@ -54,11 +60,8 @@ const Player = () => (
           </Row>
         </div>
       </div>
-      {/* <div className="col-lg-2 offset-lg-2">
-        <img src="https://image-placeholder.com/images/actual-size/57x57.png"></img>
-      </div> */}
     </Row>
   </div>
 );
 
-export default Player;
+export default connect(mapStateToProps)(Player);
